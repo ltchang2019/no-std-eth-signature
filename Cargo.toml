@@ -1,0 +1,35 @@
+[package]
+name = "no-std-signature"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+rlp = { version = "0.5.0", default-features = false, features = ["std"] }
+ethabi = { version = "17.0.0", default-features = false, features = ["full-serde", "rlp"] }
+arrayvec = { version = "0.7.2", default-features = false }
+rlp-derive = { version = "0.1.0", default-features = false }
+primitive-types = "0.11.1"
+
+# crypto
+elliptic-curve = { version = "0.11.12", default-features = false }
+generic-array = { version = "0.14.5", default-features = false }
+k256 = { version = "0.10.4", default-features = false, features = ["keccak256", "ecdsa", "std"] }
+rand = { version = "0.8.5", default-features = false }
+tiny-keccak = { version = "2.0.2", default-features = false }
+
+# misc
+chrono = { version = "0.4", default-features = false }
+serde = { version = "1.0.124", default-features = false, features = ["derive"] }
+serde_json = { version = "1.0.64", default-features = false }
+thiserror-no-std = "2.0.2"
+bytes = { version = "1.1.0", features = ["serde"] }
+hex = { version = "0.4.3", default-features = false, features = ["std"] }
+once_cell = { version = "1.12.0", optional = true }
+unicode-xid = "0.2.3"
+strum = { version = "0.24", features = ["derive"] }
+
+[features]
+default = ["std"]
+std = []
