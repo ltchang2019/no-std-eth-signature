@@ -6,7 +6,6 @@ use crate::{
 use alloc::{borrow::ToOwned, vec::Vec, string::String};
 use primitive_types::{H256, U256, H160};
 
-use serde::{Deserialize, Serialize};
 use core::{convert::TryFrom, fmt, str::FromStr};
 
 use thiserror::Error;
@@ -57,7 +56,7 @@ pub enum RecoveryMessage {
     Hash(H256),
 }
 
-#[derive(Serialize, Deserialize, Debug, Clone, PartialEq, Eq, Copy)]
+#[derive(Debug, Clone, PartialEq, Eq, Copy)]
 /// An ECDSA signature
 pub struct Signature {
     /// R value
